@@ -5,10 +5,11 @@ $app->get('/id/{id}', function ($request, $response, $args) use ($app) {
 
 
     $fb = new \Facebook\Facebook([
-        'app_id' => '{app-id}',
-        'app_secret' => '{app-secret}',
-        'default_graph_version' => 'v2.10',
-        //'default_access_token' => '{access-token}', // optional
+        'app_id' => '246293189462608',
+
+        'app_secret' => 'fd53f34bb0ef872c26a02a2a431cd5a8',
+
+        'default_graph_version' => 'v3.0',
     ]);
 
 // Use one of the helper classes to get a Facebook\Authentication\AccessToken entity.
