@@ -3,6 +3,7 @@
 $app->get('/id/{id}', function ($request, $response, $args) use ($app) {
 
 
+    $facebook_profile_id = $args['id'];
 
     $fb = new \Facebook\Facebook([
         'app_id' => '246293189462608',
@@ -12,16 +13,8 @@ $app->get('/id/{id}', function ($request, $response, $args) use ($app) {
         'default_graph_version' => 'v3.0',
     ]);
 
-// Use one of the helper classes to get a Facebook\Authentication\AccessToken entity.
-//   $helper = $fb->getRedirectLoginHelper();
-//   $helper = $fb->getJavaScriptHelper();
-//   $helper = $fb->getCanvasHelper();
-//   $helper = $fb->getPageTabHelper();
-
     try {
-        // Get the \Facebook\GraphNodes\GraphUser object for the current user.
-        // If you provided a 'default_access_token', the '{access-token}' is optional.
-        $response = $fb->get('/me', '{access-token}');
+        $response = $fb->get('/' . $facebook_profile_id . '?fields=id,name,first_name,last_name', 'EAADgAJoRilABAOI4K9ymPZBhZCat4guNAxf0VLbr3JtrZCcXowahXGXHZADAUZAd8eIZCij3piu7cSGtL4gjQlSWeZAHZAI2X1FnRjP3OKbrK4azfJ7DTP2RH6nLY2YPXrsvXqnvTZBDD4sXgEukvj5vuloDHkkDQFZCAZD');
     } catch(\Facebook\Exceptions\FacebookResponseException $e) {
         // When Graph returns an error
         echo 'Graph returned an error: ' . $e->getMessage();
