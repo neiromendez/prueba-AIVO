@@ -26,10 +26,5 @@ $app->get('/profile/facebook/{id}', function ($request, $response, $args) use ($
 
     $user = $response->getGraphUser();
 
-
-    echo 'Name: ' . $user['name'];
-
-    echo '<br>';
-
     echo $user;
 });
