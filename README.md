@@ -26,4 +26,4 @@ este repositorio contiene un endpoint de la api de facebook php graph sdk para o
 
   *  En el explorador de tu preferencia coloca en la URL el siguiente endpoint. 
  
-         /profile/facebook/10155692483667149
+          profile/facebook/{facebook_profile_id}
